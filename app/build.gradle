@@ -18,9 +18,22 @@ android {
         }
     }
 
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('release.apk')) {
+
+                outputFileName = "app_v${variant.versionName}_${variant.versionCode}.apk"
+
+            }
+        }
+    }
+
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':library')
+
+    implementation 'com.daoxuehao.android:commondirlib:1.0.9'
 }
