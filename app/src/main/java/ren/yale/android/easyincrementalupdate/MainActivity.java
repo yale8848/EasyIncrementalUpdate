@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.daoxuehao.android.commondir.CommonDir;
@@ -15,6 +16,7 @@ import ren.yale.android.intremetalupdate.EasyIncrementalUpdate;
 
 public class MainActivity extends Activity {
 
+    static final String TAG="easyincrementalupdate";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,8 @@ public class MainActivity extends Activity {
                        intent.setDataAndType(Uri.parse("file://" + path+"aaa.apk"),
                                "application/vnd.android.package-archive");
                        MainActivity.this.startActivity(intent);
+                   }else{
+                       Log.d(TAG," update fail");
                    }
 
                 } catch (Exception e) {
