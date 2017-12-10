@@ -6,10 +6,16 @@
 #define EASYINCREMENTALUPDATE_ERR_H
 
 #include "log.h"
+
+
+#define err(n,format,...) {\
+        LOGE(format,__VA_ARGS__);       \
+        return n;                      \
+}                                       \
 //#include<stdarg.h>
 //#include <stdio.h>
 
-int err(int n, char * format,...)
+int err1(int n, char * format,...)
 {
     LOGE(format);
     return  n;
