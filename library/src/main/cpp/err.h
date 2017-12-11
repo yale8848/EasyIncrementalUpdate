@@ -35,26 +35,39 @@
 
 */
 
-//#include<stdarg.h>
-//#include <stdio.h>
+#include<stdarg.h>
+#include <stdio.h>
+#include <sys/cdefs.h>
 
 
-int err(int n,char *format,char *value){
-        if (format == NULL){
-                return n;
-        }
-        LOGE_(format, value);
-        return  n;
+
+
+
+
+__BEGIN_DECLS
+
+ int err(int __status, const char* __fmt, ...) __printflike(2, 3);
+ int  errx(int __status, const char* __fmt, ...) __printflike(2, 3);
+
+__END_DECLS
+int err(int __status, const char* __fmt, ...){
+        char printf_buf[1024];
+        va_list args;
+        va_start(args, __fmt);
+        printf(printf_buf, __fmt, args);
+        va_end(args);
+        return  __status;
 }
 
-int errx(int n,char *format,char *value){
-        if (format == NULL){
-                return n;
-        }
-        LOGE_(format, value);
-        return  n;
+int errx(int __status, const char* __fmt, ...){
+
+        char printf_buf[1024];
+        va_list args;
+        va_start(args, __fmt);
+        printf(printf_buf, __fmt, args);
+        va_end(args);
+        return  __status;
 }
-//#define err(n, ...) _exit(n)
-//#define errx(n, ...) _exit(n)
+
 
 #endif //EASYINCREMENTALUPDATE_ERR_H

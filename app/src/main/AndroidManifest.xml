@@ -23,7 +23,7 @@
         </activity>
 
         <service android:name=".TestService"
-            android:process=":update"></service>
+           ></service>
     </application>
 
 </manifest>
