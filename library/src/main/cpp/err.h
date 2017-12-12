@@ -6,67 +6,46 @@
 #define EASYINCREMENTALUPDATE_ERR_H
 
 #include "log.h"
-
-/*
-#define err(n,format,...) {\
-        if (format == NULL) return n;\
-        LOGE_(format,__VA_ARGS__);       \
-        return n;                      \
-}                                       \
-
-#define err(n,format) {\
-        if (format == NULL) return n;\
-        LOGE_(format,__VA_ARGS__);       \
-        return n;                      \
-}                                       \
-
-#define errx(n,format,...) {\
-        if (format == NULL) return n;\
-        LOGE_(format,__VA_ARGS__);       \
-        return n;                      \
-}                                      \
-
-
-#define errx(n,format) {\
-        if (format == NULL) return n;\
-        LOGE_(format,__VA_ARGS__);       \
-        return n;                      \
-}                                      \
-
-*/
-
 #include<stdarg.h>
 #include <stdio.h>
-#include <sys/cdefs.h>
 
+int err(int __status, const char* __fmt, ...) __printflike(2, 3);
+int errf(int __status,u_char * old_buf,u_char *new_buf,const char* __fmt, ...) __printflike(4, 5);
+int errx(int __status, const char* __fmt, ...) __printflike(2, 3);
 
-
-
-
-
-__BEGIN_DECLS
-
- int err(int __status, const char* __fmt, ...) __printflike(2, 3);
- int  errx(int __status, const char* __fmt, ...) __printflike(2, 3);
-
-__END_DECLS
 int err(int __status, const char* __fmt, ...){
-        char printf_buf[1024];
-        va_list args;
-        va_start(args, __fmt);
-        printf(printf_buf, __fmt, args);
-        va_end(args);
-        return  __status;
-}
 
+    char buf[2048]={0};
+    va_list ap;
+    va_start(ap, __fmt);
+    vsprintf (buf, __fmt, ap);
+    LOGE(buf);
+    va_end(ap);
+    return  __status;
+}
+int errf(int __status, u_char * old_buf,u_char *new_buf,const char* __fmt, ...){
+
+    char buf[2048]={0};
+    va_list ap;
+    va_start(ap, __fmt);
+    vsprintf (buf, __fmt, ap);
+    LOGE(buf);
+    va_end(ap);
+
+    if (old_buf!=NULL) free(old_buf);
+    if (new_buf!=NULL) free(new_buf);
+
+    return  __status;
+}
 int errx(int __status, const char* __fmt, ...){
 
-        char printf_buf[1024];
-        va_list args;
-        va_start(args, __fmt);
-        printf(printf_buf, __fmt, args);
-        va_end(args);
-        return  __status;
+    char buf[2048]={0};
+    va_list ap;
+    va_start(ap, __fmt);
+    vsprintf (buf, __fmt, ap);
+    LOGE(buf);
+    va_end(ap);
+    return  __status;
 }
 
 

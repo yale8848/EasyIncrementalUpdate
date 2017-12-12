@@ -21,7 +21,7 @@ android {
     android.applicationVariants.all { variant ->
         variant.outputs.all { output ->
             def outputFile = output.outputFile
-            if (outputFile != null && outputFile.name.endsWith('release.apk')) {
+            if (outputFile != null && (outputFile.name.endsWith('release.apk')||outputFile.name.endsWith('debug.apk') )) {
 
                 outputFileName = "app_v${variant.versionName}_${variant.versionCode}.apk"
 

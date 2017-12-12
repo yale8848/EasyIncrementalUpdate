@@ -7,14 +7,14 @@
 
 #include <android/log.h>
 
-#define LOGI_(FORMAT, ...) __android_log_print(ANDROID_LOG_INFO, "EasyIncrementalUpdate",FORMAT,__VA_ARGS__)
-#define LOGD_(FORMAT, ...) __android_log_print(ANDROID_LOG_DEBUG,"EasyIncrementalUpdate",FORMAT,__VA_ARGS__)
-#define LOGE_(FORMAT, ...) __android_log_print(ANDROID_LOG_ERROR,"EasyIncrementalUpdate",FORMAT,__VA_ARGS__)
+#define TAG "EasyIncrementalUpdate"
 
+#define LOGI_F(FORMAT, ...) __android_log_print(ANDROID_LOG_INFO, TAG,FORMAT,__VA_ARGS__)
+#define LOGD_F(FORMAT, ...) __android_log_print(ANDROID_LOG_DEBUG,TAG,FORMAT,__VA_ARGS__)
+#define LOGE_F(FORMAT, ...) __android_log_print(ANDROID_LOG_ERROR,TAG,FORMAT,__VA_ARGS__)
 
-#define LOGI(VALUE) __android_log_print(ANDROID_LOG_INFO, "EasyIncrementalUpdate",VALUE)
-#define LOGD(VALUE) __android_log_print(ANDROID_LOG_DEBUG,"EasyIncrementalUpdate",VALUE)
-#define LOGE(VALUE) __android_log_print(ANDROID_LOG_ERROR,"EasyIncrementalUpdate",VALUE)
-
+#define LOGI(VALUE) __android_log_print(ANDROID_LOG_INFO, TAG,"%s",VALUE)
+#define LOGD(VALUE) __android_log_print(ANDROID_LOG_DEBUG,TAG,"%s",VALUE)
+#define LOGE(VALUE) __android_log_print(ANDROID_LOG_ERROR,TAG,"%s",VALUE)
 
 #endif //EASYINCREMENTALUPDATE_LOG_H

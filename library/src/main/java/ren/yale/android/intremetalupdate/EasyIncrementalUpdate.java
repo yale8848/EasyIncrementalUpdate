@@ -7,7 +7,7 @@ package ren.yale.android.intremetalupdate;
 public class EasyIncrementalUpdate {
 
     static {
-        System.loadLibrary("native-lib");
+        System.loadLibrary("bspatch");
     }
     public synchronized static native boolean patch(String oldFilePath, String newFilePath, String patchPath);
 }

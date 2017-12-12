@@ -27,10 +27,7 @@ public class TestService extends Service {
         super.onCreate();
     }
 
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-
-
+    private void patch(){
         try {
 
             File file = CommonDir.getInstance().getExternalStorageDirectoryWrite("111");
@@ -41,7 +38,7 @@ public class TestService extends Service {
 
             if ( EasyIncrementalUpdate.patch(appInfo.sourceDir,path+"aaa.apk",path+"p.apk")){
                 Intent intent1 = new Intent(Intent.ACTION_VIEW);
-                intent.setDataAndType(Uri.parse("file://" + path+"aaa.apk"),
+                intent1.setDataAndType(Uri.parse("file://" + path+"aaa.apk"),
                         "application/vnd.android.package-archive");
                 startActivity(intent1);
             }else{
@@ -51,7 +48,18 @@ public class TestService extends Service {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
 
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                patch();
+            }
+        }).start();
 
 
         return super.onStartCommand(intent, flags, startId);
