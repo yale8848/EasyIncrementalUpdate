@@ -17,28 +17,13 @@ android {
             }
         }
 
-        signingConfigs {
 
-
-            release {
-                storeFile file("key.jks")
-                storePassword "123456"
-                keyAlias "key0"
-                keyPassword "123456"
-                v2SigningEnabled false
-                v1SigningEnabled true
-            }
-        }
 
     }
 
     buildTypes {
-        debug {
-            signingConfig signingConfigs.release
-            minifyEnabled false
-        }
+
         release {
-            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
