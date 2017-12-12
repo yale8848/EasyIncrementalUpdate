@@ -6,8 +6,8 @@ android {
         applicationId "ren.yale.android.easyincrementalupdate"
         minSdkVersion 14
         targetSdkVersion 21
-        versionCode 2
-        versionName "2.0"
+        versionCode 3
+        versionName "3.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -51,7 +51,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':library')
+    implementation project(':intremetalupdate')
 
     implementation 'com.daoxuehao.android:commondirlib:1.0.9'
 }
