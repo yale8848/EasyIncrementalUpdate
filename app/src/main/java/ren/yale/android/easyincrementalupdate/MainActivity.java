@@ -20,7 +20,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         CommonDir.getInstance().init(this);
-        // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText(getAppVersionName(this));
 

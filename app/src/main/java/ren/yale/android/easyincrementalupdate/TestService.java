@@ -52,16 +52,12 @@ public class TestService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-
-
         new Thread(new Runnable() {
             @Override
             public void run() {
                 patch();
             }
         }).start();
-
-
         return super.onStartCommand(intent, flags, startId);
     }
 }
