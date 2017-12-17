@@ -35,7 +35,6 @@ public class TestService extends Service {
             final String path = file.getAbsolutePath()+File.separator;
             ApplicationInfo appInfo = getPackageManager()
                     .getApplicationInfo(getPackageName(), 0);
-
             if ( EasyIncrementalUpdate.patch(appInfo.sourceDir,path+"aaa.apk",path+"p.apk")){
                 Intent intent1 = new Intent(Intent.ACTION_VIEW);
                 intent1.setDataAndType(Uri.parse("file://" + path+"aaa.apk"),
