@@ -26,7 +26,7 @@ android {
     buildTypes {
 
         debug {
-            signingConfig signingConfigs.release
+           // signingConfig signingConfigs.release
             minifyEnabled false
         }
         release {
@@ -51,7 +51,8 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':intremetalupdate')
+    //implementation project(':intremetalupdate')
 
     implementation 'com.daoxuehao.android:commondirlib:1.0.9'
+    implementation 'ren.yale.android:intremetalupdate:1.0.2'
 }

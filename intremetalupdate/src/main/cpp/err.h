@@ -15,7 +15,7 @@ int errx(int __status, const char* __fmt, ...) __printflike(2, 3);
 
 int err(int __status, const char* __fmt, ...){
 
-    char buf[2048]={0};
+    char buf[1024]={0};
     va_list ap;
     va_start(ap, __fmt);
     vsprintf (buf, __fmt, ap);
@@ -25,7 +25,7 @@ int err(int __status, const char* __fmt, ...){
 }
 int errf(int __status, u_char * old_buf,u_char *new_buf,const char* __fmt, ...){
 
-    char buf[2048]={0};
+    char buf[1024]={0};
     va_list ap;
     va_start(ap, __fmt);
     vsprintf (buf, __fmt, ap);
