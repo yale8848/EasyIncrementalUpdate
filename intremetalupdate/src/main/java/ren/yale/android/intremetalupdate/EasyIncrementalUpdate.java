@@ -2,6 +2,7 @@ package ren.yale.android.intremetalupdate;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 
 /**
  * Created by yale on 2017/12/3.
@@ -21,6 +22,19 @@ public class EasyIncrementalUpdate {
      */
     public synchronized static native boolean patch(String oldApkPath, String newApkPath, String patchApkPath);
 
+
+
+    public static String getApkSourceDir(Context context){
+        try {
+            ApplicationInfo appInfo = context.getApplicationContext().getPackageManager()
+                    .getApplicationInfo(context.getApplicationContext().getPackageName(), 0);
+            return appInfo.sourceDir;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
     /**
      * @param context
      * @param newApkPath
@@ -28,13 +42,6 @@ public class EasyIncrementalUpdate {
      * @return
      */
     public synchronized static  boolean patch(Context context,String newApkPath, String patchApkPath){
-        try {
-            ApplicationInfo appInfo = context.getApplicationContext().getPackageManager()
-                    .getApplicationInfo(context.getApplicationContext().getPackageName(), 0);
-            return patch(appInfo.sourceDir,newApkPath,patchApkPath);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
+        return patch(getApkSourceDir(context),newApkPath,patchApkPath);
     }
 }
