@@ -23,7 +23,10 @@ public class EasyIncrementalUpdate {
     public synchronized static native boolean patch(String oldApkPath, String newApkPath, String patchApkPath);
 
 
-
+    /**
+     * @param context
+     * @return
+     */
     public static String getApkSourceDir(Context context){
         try {
             ApplicationInfo appInfo = context.getApplicationContext().getPackageManager()

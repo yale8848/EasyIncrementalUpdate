@@ -31,7 +31,7 @@ __FBSDID("$FreeBSD: src/usr.bin/bsdiff/bsdiff/bsdiff.c,v 1.1 2005/08/06 01:59:05
 #include <sys/types.h>
 
 #include "bzip2/bzlib.h"
-#include <err.h>
+#include "err.h"
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
