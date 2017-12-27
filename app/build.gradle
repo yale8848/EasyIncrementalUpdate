@@ -51,5 +51,6 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':intremetalupdate')
+    //implementation 'ren.yale.android:easyincremetalupdate:1.0.9'
+    implementation project(':incremetalupdate')
 }

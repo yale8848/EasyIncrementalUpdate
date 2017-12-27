@@ -22,6 +22,21 @@ boolean ret = EasyIncrementalUpdate.patch(oldApk,"new apk path","patch file")
 
 > 可以根据ret的值判断是否成功，如果失败的话，可以全量更新，失败的原因可以看logcat TAG=EasyIncrementalUpdate的日志
 
+- ndk abi 选择
+
+在app/build.gradle中，请根据自己的需求选择
+
+```
+    defaultConfig {
+        ...
+        ndk {
+            abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a', 'arm64-v8a','mips'
+        }
+    }
+
+```
+
+
 ## 原理
 
 服务器端通过开源差分工具[bsdiff](http://www.daemonology.net/bsdiff/)实现差分生成patch文件,客户端下载patch文件,
