@@ -70,6 +70,14 @@ patch
 bspatch old.apk new.apk patch
 ```
 
+## Issue
+
+[Issue](issue)
+
+## How to contributing
+
+[How to contributing](CONTRIBUTING.md)
+
 ## License
 
 ```

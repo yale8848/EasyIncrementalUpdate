@@ -72,6 +72,14 @@ bsdiff old.apk new.apk patch
 bspatch old.apk new.apk patch
 ```
 
+## 问题
+
+可以在[这里](issue)提问
+
+## 贡献代码
+
+[如何贡献代码](CONTRIBUTING.md)
+
 ## 开源协议
 
 ```
