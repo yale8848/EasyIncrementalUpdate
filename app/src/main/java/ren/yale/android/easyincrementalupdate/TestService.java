@@ -2,13 +2,9 @@ package ren.yale.android.easyincrementalupdate;
 
 import android.app.Service;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
 import android.net.Uri;
+import android.os.Environment;
 import android.os.IBinder;
-
-import com.daoxuehao.android.commondir.CommonDir;
-
-import java.io.File;
 
 import ren.yale.android.intremetalupdate.EasyIncrementalUpdate;
 
@@ -29,15 +25,13 @@ public class TestService extends Service {
 
     private void patch(){
         try {
-
-            File file = CommonDir.getInstance().getExternalStorageDirectoryWrite("111");
-
-            final String path = file.getAbsolutePath()+File.separator;
-            ApplicationInfo appInfo = getPackageManager()
-                    .getApplicationInfo(getPackageName(), 0);
-            if ( EasyIncrementalUpdate.patch(appInfo.sourceDir,path+"aaa.apk",path+"p.apk")){
+            String oldApk = EasyIncrementalUpdate.getApkSourceDir(this.getApplicationContext());
+            String sdpath= Environment.getExternalStorageDirectory().getAbsolutePath()+"/0tmp/";
+            String newApk = sdpath+"new.apk";
+            String patch = sdpath+"patch.patch";
+            if ( EasyIncrementalUpdate.patch(oldApk,newApk,patch)){
                 Intent intent1 = new Intent(Intent.ACTION_VIEW);
-                intent1.setDataAndType(Uri.parse("file://" + path+"aaa.apk"),
+                intent1.setDataAndType(Uri.parse("file://"+newApk),
                         "application/vnd.android.package-archive");
                 startActivity(intent1);
             }else{

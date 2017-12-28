@@ -2,33 +2,31 @@
 
 [![](https://img.shields.io/badge/jcenter-1.1.1-519dd9.svg)](https://bintray.com/yale8848/maven/easyincremetalupdate)
 
-[English](README_EN.md)
+Android binary patch lib, merge APK with native code. This lib can use incremental update app, let download APK size more smaller.
 
-Android差分补丁库，通过native层合并APK，实现增量更新升级，让你更新的APK更小。
-
-## 如何使用
-- 引入jcenter库
+## How Use
+- Add jcenter lib
 ```
 implementation 'ren.yale.android:intremetalupdate:1.1.1'
 ```
-- 代码
+- Add code
 
 ```
 boolean ret = EasyIncrementalUpdate.patch(context,"new apk path","patch file")
 ```
 
-或者
+or
 
 ```
 String oldApk = EasyIncrementalUpdate.getApkSourceDir(context);
 boolean ret = EasyIncrementalUpdate.patch(oldApk,"new apk path","patch file")
 ```
 
-> 可以根据ret的值判断是否成功，如果失败的话，可以全量更新，失败的原因可以看logcat TAG=EasyIncrementalUpdate的日志
+> According to ret value judge whether successful,if false,you can download whole APK,and you can see error info with TAG=EasyIncrementalUpdate in LogCat.
 
-- ndk abi 选择
+- NDK abi chose
 
-在app/build.gradle中，请根据自己的需求选择
+you can use abiFilters in app/build.gradle
 
 ```
     defaultConfig {
@@ -41,38 +39,38 @@ boolean ret = EasyIncrementalUpdate.patch(oldApk,"new apk path","patch file")
 ```
 
 
-## 原理
+## Principle
 
-服务器端通过开源差分工具[bsdiff](http://www.daemonology.net/bsdiff/)实现差分生成patch文件,客户端下载patch文件,
-和本地原apk合并生产新的apk
+use open source code [bsdiff](http://www.daemonology.net/bsdiff/) crate patch file in server, then client download patch file add merge to a new file.
 
-## 服务器端差分工具使用
+
+## Server tools
 
 ### windows
-- 下载server/windows/[bsdiff.exe](server/windows/bsdiff.exe),下载server/windows/[bspatch.exe](server/windows/bspatch.exe)
+- download server/windows/[bsdiff.exe](server/windows/bsdiff.exe),download server/windows/[bspatch.exe](server/windows/bspatch.exe)
 
-差分命令
+diff
 ```
 bsdiff.exe old.apk new.apk patch
 ```
-合并命令(可以用来测试)
+patch
 ```
 bspatch.exe old.apk new.apk patch
 ```
 
 ### linux_x86-64
-- 下载server/linux_x86-64/[bsdiff](server/linux_x86-64/bsdiff),下载server/linux_x86-64/[bspatch](server/linux_x86-64/bspatch)
+- download server/linux_x86-64/[bsdiff](server/linux_x86-64/bsdiff),download server/linux_x86-64/[bspatch](server/linux_x86-64/bspatch)
 
-差分命令
+diff
 ```
 bsdiff old.apk new.apk patch
 ```
-合并命令(可以用来测试)
+patch
 ```
 bspatch old.apk new.apk patch
 ```
 
-## 开源协议
+## License
 
 ```
 MIT License

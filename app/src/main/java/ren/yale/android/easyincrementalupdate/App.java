@@ -10,7 +10,6 @@ public class App extends Application {
 
     @Override
     public void onCreate() {
-        LogUtil.d("App");
         super.onCreate();
     }
 }
