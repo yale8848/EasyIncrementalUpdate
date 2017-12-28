@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.daoxuehao.android.commondir.CommonDir;
 
 public class MainActivity extends Activity {
 
@@ -19,7 +18,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CommonDir.getInstance().init(this);
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText(getAppVersionName(this));
 

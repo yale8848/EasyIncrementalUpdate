@@ -26,7 +26,7 @@ public class TestService extends Service {
     private void patch(){
         try {
             String oldApk = EasyIncrementalUpdate.getApkSourceDir(this.getApplicationContext());
-            String sdpath= Environment.getExternalStorageDirectory().getAbsolutePath()+"/tmp/";
+            String sdpath= Environment.getExternalStorageDirectory().getAbsolutePath()+"/0tmp/";
             String newApk = sdpath+"new.apk";
             String patch = sdpath+"patch.patch";
             if ( EasyIncrementalUpdate.patch(oldApk,newApk,patch)){
