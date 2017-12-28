@@ -1,0 +1,4 @@
+- fork https://github.com/yale8848/EasyIncrementalUpdate.git
+- git checkout develop
+- commit & push
+- pull request
