@@ -5,7 +5,7 @@ Android增量升级库，通过native层合并apk实现增量更新升级。
 ## 如何使用
 - 引入jcenter库
 ```
-implementation 'ren.yale.android:intremetalupdate:1.1.0'
+implementation 'ren.yale.android:intremetalupdate:1.1.1'
 ```
 - 代码添加
 
