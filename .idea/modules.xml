@@ -4,7 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EasyIncrementalUpdate.iml" filepath="$PROJECT_DIR$/EasyIncrementalUpdate.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/intremetalupdate/intremetalupdate.iml" filepath="$PROJECT_DIR$/intremetalupdate/intremetalupdate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/incremetalupdate/incremetalupdate.iml" filepath="$PROJECT_DIR$/incremetalupdate/incremetalupdate.iml" />
+      <module fileurl="file://C:\YaleSoftFiles\WorkSpace\AndroidStudio\EasyIncrementalUpdate\intremetalupdate\intremetalupdate.iml" filepath="C:\YaleSoftFiles\WorkSpace\AndroidStudio\EasyIncrementalUpdate\intremetalupdate\intremetalupdate.iml" />
       <module fileurl="file://C:\dev\project\android\EasyIncrementalUpdate\intremetalupdate\intremetalupdate.iml" filepath="C:\dev\project\android\EasyIncrementalUpdate\intremetalupdate\intremetalupdate.iml" />
     </modules>
   </component>

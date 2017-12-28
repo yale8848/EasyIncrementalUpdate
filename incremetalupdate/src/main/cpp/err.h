@@ -1,5 +1,5 @@
 //
-// Created by word on 2017/12/9.
+// Created by yale on 2017/12/9.
 //
 
 #ifndef EASYINCREMENTALUPDATE_ERR_H
