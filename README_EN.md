@@ -72,7 +72,7 @@ bspatch old.apk new.apk patch
 
 ## Issue
 
-[Issue](issue)
+[Issue](https://github.com/yale8848/EasyIncrementalUpdate/issues)
 
 ## How to contributing
 
