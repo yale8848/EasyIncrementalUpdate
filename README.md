@@ -72,7 +72,7 @@ bsdiff old.apk new.apk patch
 bspatch old.apk new.apk patch
 ```
 
-## 问题
+## 提问
 
 可以在[这里](https://github.com/yale8848/EasyIncrementalUpdate/issues)提问
 
