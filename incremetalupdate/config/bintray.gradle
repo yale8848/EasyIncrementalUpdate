@@ -4,7 +4,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 
-version = '1.1.1'
+version = '1.1.2'
 
 repositories {
     jcenter()
@@ -18,7 +18,7 @@ install {
         pom {
             project {
                 packaging 'aar'
-                name 'easyincremetalupdate'    //项目描述
+                name 'incremetalupdate'    //项目描述
                 url siteUrl
                 licenses {
                     license {
@@ -69,7 +69,7 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = "maven"
-        name = "easyincremetalupdate"    //发布到JCenter上的项目名字
+        name = "incremetalupdate"    //发布到JCenter上的项目名字
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
