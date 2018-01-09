@@ -1,13 +1,13 @@
 # EasyIncrementalUpdate
 
-[![](https://img.shields.io/badge/jcenter-1.0.5-519dd9.svg)](https://bintray.com/yale8848/maven/easyincremetalupdate)
+[![](https://img.shields.io/badge/jcenter-1.1.2-519dd9.svg)](https://bintray.com/yale8848/maven/easyincremetalupdate)
 
 Android binary patch lib, merge APK with native code. This lib can use incremental update app, let download APK size more smaller.
 
 ## How Use
 - Add jcenter lib
 ```
-implementation 'ren.yale.android:intremetalupdate:1.0.5'
+implementation 'ren.yale.android:intremetalupdate:1.1.2'
 ```
 - Add code
 

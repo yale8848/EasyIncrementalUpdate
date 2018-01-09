@@ -1,6 +1,6 @@
 # EasyIncrementalUpdate
 
-[![](https://img.shields.io/badge/jcenter-1.0.5-519dd9.svg)](https://bintray.com/yale8848/maven/easyincremetalupdate)
+[![](https://img.shields.io/badge/jcenter-1.1.2-519dd9.svg)](https://bintray.com/yale8848/maven/easyincremetalupdate)
 
 [English](README_EN.md)
 
@@ -9,7 +9,7 @@ Android差分补丁库，通过native层合并APK，实现增量更新升级，�
 ## 如何使用
 - 引入jcenter库
 ```
-implementation 'ren.yale.android:intremetalupdate:1.0.5'
+implementation 'ren.yale.android:intremetalupdate:1.1.2'
 ```
 - 代码
 
