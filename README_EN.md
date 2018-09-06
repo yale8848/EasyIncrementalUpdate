@@ -7,7 +7,7 @@ Android binary patch lib, merge APK with native code. This lib can use increment
 ## How Use
 - Add jcenter lib
 ```
-implementation 'ren.yale.android:intremetalupdate:1.1.2'
+implementation 'ren.yale.android:incremetalupdate:1.1.2'
 ```
 - Add code
 
