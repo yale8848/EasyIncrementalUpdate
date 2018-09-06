@@ -9,7 +9,7 @@ Android差分补丁库，通过native层合并APK，实现增量更新升级，�
 ## 如何使用
 - 引入jcenter库
 ```
-implementation 'ren.yale.android:intremetalupdate:1.1.2'
+implementation 'ren.yale.android:incremetalupdate:1.1.2'
 ```
 - 代码
 
